@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js"></script>
-    <title>Document</title>
+    <script src="index.js" defer></script>
+    <title>Odin-Recursion</title>
 </head>
 <body>
-    
+    <form id="fib" style="margin-bottom: 10px;">
+        <label for="fib">Enter the number of items to display in fibonacci sequence</label>
+        <input 
+            type="number" 
+            id="fib" 
+            name="fib" 
+            placeholder="7" 
+            required
+        />
+        <button type="submit">Submit</button>
+    </form>
+    <form id="merge-sort">
+        <label for="merge-sort">Type in number arrays separated by comma's as shown to sort them</label>
+        <input 
+            type="text" 
+            id="merge-sort" 
+            name="merge-sort" 
+            placeholder="2,4,9,1,8,6,3,10,5,7" 
+            required
+            pattern="^\d+(,\s*\d+)*$"
+            title="Please enter numbers separated by commas (e.g., 2,4,9)"
+        />
+        <button type="submit">Submit</button>
+    </form>
+
+    <p  id="result"></p>
 </body>
 </html>

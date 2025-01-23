@@ -69,8 +69,45 @@ const fibonacci = (n) => {
 
 // console.log("Fibonacci of 8 is: " + fibonacci(8));
 
-let array = [2, 4, 9, 1, 6, 3, 5, 7, 8, 10];
+// let array = [2, 4, 9, 1, 8, 6, 3, 10, 5, 7];
 
-console.log("merge sort of " + array + " is " + mergeSort(array));
+// console.log("merge sort of " + array + " is " + mergeSort(array));
 
 // mergeSort([9, 6, 1]);
+
+let form;
+
+form = document.querySelector("#merge-sort");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let data = new FormData(form);
+    let input = data.get("merge-sort");
+    console.log(input);
+
+    const numberArray = input
+        .split(",")             // Split the string by commas
+        .map((num) => parseFloat(num.trim())); // Convert each trimmed element to a number
+
+    console.log("Array to be sorted: ", numberArray);
+
+    // Call your sorting function
+    const sortedArray = mergeSort(numberArray);
+    console.log("Sorted Array: ", sortedArray);
+
+    let result = document.querySelector("#result");
+    result.textContent = ("Sorted Array: " + sortedArray);
+});
+
+let form2 = document.querySelector("#fib");
+form2.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let data = new FormData(form2);
+    let input = data.get("fib");
+    console.log(input);
+
+    const fibArray = fibonacci(input);
+    console.log("Fibonacci of " + input + " is: " + fibArray);
+
+    let result = document.querySelector("#result");
+    result.textContent = ("Fibonacci of " + input + " is: " + fibArray);
+});
